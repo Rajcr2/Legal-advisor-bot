@@ -1,0 +1,134 @@
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Card like Streamlit */
+.card {
+  background: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+
+.card label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Input */
+.card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+
+  box-sizing: border-box;   /* ✅ IMPORTANT FIX */
+}
+
+.card input:focus {
+  border-color: #999;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;  /* ✅ key change */
+  margin-top: 14px;
+}
+
+/* button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  background: white;
+  transition: 0.2s;
+} */
+
+button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+  background: white;
+  transition: 0.2s;
+  min-width: 140px;   /* ✅ keeps balance */
+}
+
+button:hover {
+  background: #f5f5f5;
+}
+
+/* Primary button */
+.primary {
+  background: #111;
+  color: white;
+  border: none;
+}
+
+.primary:hover {
+  opacity: 0.9;
+}
+
+/* Danger button */
+.danger {
+  color: #ff3b30;
+  border-color: #ff3b30;
+}
+
+/* Chat */
+.chat {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-msg {
+  align-self: flex-end;
+  background: #dcf8c6;
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 75%;
+}
+
+.bot-msg {
+  align-self: flex-start;
+  background: #f1f0f0;
+  padding: 10px 14px;
+  border-radius: 16px;
+  max-width: 75%;
+  white-space: pre-wrap;
+}
+
+/* Tips */
+.tips {
+  margin-top: 25px;
+  color: #555;
+  font-size: 14px;
+}
+
+.tips ul {
+  padding-left: 18px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
