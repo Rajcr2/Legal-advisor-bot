@@ -40,6 +40,7 @@ mcp = FastMCP("Legal Advisor")
 def ask_legal_question(question: str) -> str:
     return autonomous_agent(question)
 
+@app.on_event("startup")
 async def start_mcp():
     thread = threading.Thread(target=mcp.run, daemon=True)
     thread.start()
