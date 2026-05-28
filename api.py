@@ -1,3 +1,4 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -6,7 +7,22 @@ from fastmcp import FastMCP
 import requests
 import threading
 
-app = FastAPI(title="Legal Advisor API", version="1.0")
+INTENT_SERVICE_URL = "http://localhost:8001/predict"
+
+mcp = FastMCP("Legal Advisor")
+
+@mcp.tool()
+def ask_legal_question(question: str) -> str:
+    return autonomous_agent(question)
+
+@asynccontextmanager
+async def lifespan(app):
+    thread = threading.Thread(target=mcp.run, daemon=True)
+    thread.start()
+    print(">>> MCP Server started in background")
+    yield
+
+app = FastAPI(title="Legal Advisor API", version="1.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,8 +30,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-INTENT_SERVICE_URL = "http://localhost:8001/predict"
 
 class Query(BaseModel):
     question: str
@@ -32,28 +46,10 @@ def get_intent(question: str) -> str:
         print(">>> Intent service unavailable, using default: legal_query")
         return "legal_query"
 
-# ── MCP - runs in background  ──────────────────
-
-mcp = FastMCP("Legal Advisor")
-
-@mcp.tool()
-def ask_legal_question(question: str) -> str:
-    return autonomous_agent(question)
-
-@app.on_event("startup")
-async def start_mcp():
-    thread = threading.Thread(target=mcp.run, daemon=True)
-    thread.start()
-    print(">>> MCP Server started in background")
-
-
-
-
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
-# ── New endpoint — returns intent instantly before agent runs ──────────────────
 @app.post("/api/v1/intent")
 async def intent_check(query: Query):
     if not query.question.strip():
@@ -62,7 +58,6 @@ async def intent_check(query: Query):
     print(f">>> Intent Check: {query.question[:50]} → {intent}")
     return {"intent": intent}
 
-# ── Main endpoint — runs agent with already known intent ───────────────────────
 @app.post("/api/v1/ask")
 async def ask(query: Query):
     print("\n>>> API HIT")
