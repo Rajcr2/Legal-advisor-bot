@@ -21,6 +21,7 @@ Along with this, system also includes :
 - **An FastMCP server for other AI systems so, they can call it as a tool**
 - **A ReAct based chat UI for interactive querying**
 - **DeepEval based evaluation pipeline to evaluate answer quality**
+- **NLP-based query intent classifier to route queries before agent runs**
 
 ## Key Features
 
@@ -35,6 +36,8 @@ Along with this, system also includes :
 - **MCP server for AI-to-AI integration**
 - **Evaluation framework using DeepEval**
 - **Golden dataset regression testing**
+- **NLP intent classification using fine-tuned DistilBERT**
+- **Unit tested with Pytest — 8 tests covering API, retriever, selector and intent service**
 
 ## Agent Workflow
 
@@ -55,11 +58,14 @@ The agent stops naturally when retrieved knowledge stabilizes.
 | **Agent**       | LangGraph (ReAct pattern)       |
 | **LLM**         | Mistral 7B via Ollama           |
 | **RAG**         | ChromaDB + SentenceTransformers (all-MiniLM-L6-v2) |
-| **Backend**     | FastAPI, Pydantic                         |
+| **NLP**         | DistilBERT (HuggingFace Transformers) |
+| **Backend**     | FastAPI, Pydantic               |
+| **Intent Service** | FastAPI microservice (port 8001) |
 | **MCP**         | FastMCP                         |
 | **Frontend**    | React (Vite)                    |
 | **Storage**     | PostgreSQL (PDFs)               |
 | **Evaluation**  | DeepEval                        |
+| **Unit Tests**  | Pytest                          |
 
 ### Prerequisites
 To run this project, you need to install the following libraries :
@@ -73,6 +79,7 @@ To run this project, you need to install the following libraries :
 - **LangGraph**: LangGraph is a framework for building stateful, multi-step AI agent workflows. It enables controlled reasoning, tool orchestration, and conditional execution using graph-based pipelines.
 - **Node.js**: Node is a JavaScript runtime for building scalable backend apps.
 - **Deepeval**: DeepEval is an evaluation framework for LLM and RAG systems that measures answer quality, faithfulness, hallucination, retrieval relevance, and overall task performance using structured metrics.
+- **HuggingFace Transformers**: Used for fine-tuning DistilBERT on legal question intent classification.
 
 Other Utility Libraries : **psycopg2**, **textwrap**.
 
@@ -96,6 +103,7 @@ Other Utility Libraries : **psycopg2**, **textwrap**.
 | ------ | ----------- | ----------------------- |
 | GET    | /health     | Check if API is running |
 | POST   | /api/v1/ask | Ask legal question      |
+| POST   | /api/v1/intent    | Classify query intent        |
 
 **Docs**: http://localhost:8000/docs
 
@@ -145,15 +153,26 @@ ________
 
 ________
 
-8.   Now, we are almost done. Now, start backend server.
+8.   Train the NLP intent classifier once before starting the backend :
+
+     ```
+     python intent_classifier.py
+     ```
+
+9.   Now, start the Intent Service in a separate terminal :
+
+     ```
+     python intent_service.py
+     ```
+
+10.  Now, start backend server.
      Run Uvicorn to start the FastAPI server from terminal. This will start the backend API.     
 
      ```
      uvicorn api:app --reload
      ``` 
-      
 
-8.   Next step is in another, Terminal we have start the frontend UI. Firstly we have to navigate to frontend folder and run the developement server using npm.
+11.  Next step is in another, Terminal we have start the frontend UI. Firstly we have to navigate to frontend folder and run the developement server using npm.
      This will open chatbot in browser at **http://localhost:5173** .
 
      ```
@@ -220,9 +239,20 @@ Run **'python Evaluation.py'** file from Terminal.
 
 <img width="1920" height="1080" alt="Evaluation final" src="https://github.com/user-attachments/assets/3f424cf1-59f4-4400-b535-3acfcd72850f" />
 
-
 _____
 
+## Unit Tests
+
+Unit tests cover API endpoints, retriever, selector and intent service using Pytest.
+
+Run from terminal :
+
+```
+pytest Test.py -v
+```
+<img width="1920" height="1080" alt="pytest output" src="https://github.com/user-attachments/assets/0d956888-6471-488e-a87b-c0eb4418df6d" />
+
+_____
 
 ### What Makes This System Agentic?
 
