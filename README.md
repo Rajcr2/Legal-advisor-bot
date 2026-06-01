@@ -158,6 +158,7 @@ ________
      ```
      python intent_classifier.py
      ```
+<img width="1783" height="1021" alt="Intent Classifier Output" src="https://github.com/user-attachments/assets/e680f720-352e-4c25-b80f-1c1c5a0b67a8" />
 
 9.   Now, start the Intent Service in a separate terminal :
 
