@@ -186,7 +186,15 @@ Ask any legal question like this **"My employer ignored my complaint, what are m
 
 ### Output
 
-https://github.com/user-attachments/assets/68067416-694a-4201-81de-2443ca277dbd
+
+
+
+
+https://github.com/user-attachments/assets/c9abb601-aa85-4aef-9deb-42c5b4ca5b89
+
+
+
+
 _______
 
 This was about **Agentic System**. Tested the same system using DeepEval's pre-built metrics below is the more about it.
