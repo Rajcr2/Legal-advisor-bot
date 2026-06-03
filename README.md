@@ -139,13 +139,10 @@ This allows tools like Claude Desktop or Cursor to call it directly.
    ``` 
    When pdfs are succefully stored you will get output like below :
 
-   https://github.com/user-attachments/assets/d313727c-7d69-4600-aacb-25307e80ee16
 
-   <img width="1920" height="1080" alt="Store py" src="https://github.com/user-attachments/assets/d313727c-7d69-4600-aacb-25307e80ee16" />
+<img width="1920" height="1080" alt="Store py" src="https://github.com/user-attachments/assets/21683ee0-7d3b-45fe-9760-5fc474de3fba" />
 
-   <img width="1920" height="1080" alt="Store Postgre" src="https://github.com/user-attachments/assets/30c64697-6ff7-41ef-8b1f-02e8b4ba877b" />
-
-   https://github.com/user-attachments/assets/30c64697-6ff7-41ef-8b1f-02e8b4ba877b
+<img width="1920" height="1080" alt="Store Postgre" src="https://github.com/user-attachments/assets/5cd62fa5-0617-4228-86e0-d12ca2d2d425" />
 ________
 
 7.   Lets, generate vector Embeddings now. for that, Run following command :
