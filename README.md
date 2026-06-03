@@ -143,13 +143,15 @@ This allows tools like Claude Desktop or Cursor to call it directly.
 <img width="1920" height="1080" alt="Store py" src="https://github.com/user-attachments/assets/21683ee0-7d3b-45fe-9760-5fc474de3fba" />
 
 <img width="1920" height="1080" alt="Store Postgre" src="https://github.com/user-attachments/assets/5cd62fa5-0617-4228-86e0-d12ca2d2d425" />
-________
+
+_________
+
 
 7.   Lets, generate vector Embeddings now. for that, Run following command :
    
     python Embeddings.py
 
-<img width="1920" height="1080" alt="Embeddings py" src="https://github.com/user-attachments/assets/f5f8e812-4efa-4699-8830-0782e960532e" />
+<img width="1920" height="1080" alt="Embeddings py" src="https://github.com/user-attachments/assets/701097eb-6cb9-474f-bb13-15080e76e570" />
 
 ________
 
@@ -212,7 +214,7 @@ This was about **Agentic System**. Tested the same system using DeepEval's pre-b
 
 Evaluation uses a **Golden Dataset** for repeatable testing and regression detection.
 
-<img width="1446" height="606" alt="golden dataset eval" src="https://github.com/user-attachments/assets/e16d87f8-c97f-4c57-a323-b4f6debb189f" />
+<img width="1446" height="606" alt="golden dataset eval" src="https://github.com/user-attachments/assets/d78598dc-5d6f-463d-aca2-53b849313c44" />
 
 
 Run **'python Evaluation.py'** file from Terminal.
@@ -221,32 +223,32 @@ Run **'python Evaluation.py'** file from Terminal.
 
 1. **First it create Test cases like this.**
 
-<img width="1920" height="1080" alt="Test case 1" src="https://github.com/user-attachments/assets/11ac9e7c-fa13-4e2c-bf2a-4e9f2e5ac816" />
+<img width="1920" height="1080" alt="Test case 1" src="https://github.com/user-attachments/assets/e607cd42-ada4-4e2c-9b66-fb107e115a34" />
 
 
 2. **Then evaluation starts.**
 
-<img width="1383" height="316" alt="running main" src="https://github.com/user-attachments/assets/43a6979b-a772-49ed-a9ac-7fa1f87d4266" />
+<img width="1383" height="316" alt="running main" src="https://github.com/user-attachments/assets/2306c45f-a1cc-4472-830c-701d73e6ed48" />
 
 3. **as evaluation progresses, we get Test cases Results like this for All Test cases and in the end Final Evaluation Output.**
 
 
 #### Test Case 1
-<img width="1920" height="1080" alt="evaluation tc 1" src="https://github.com/user-attachments/assets/31204a76-20d0-4a9b-8608-b802be20ead9" />
+<img width="1920" height="1080" alt="evaluation tc 1" src="https://github.com/user-attachments/assets/2f4ef8e2-e879-49be-8ff1-e43511c6cfd5" />
 
 #### Test Case 2
-<img width="1920" height="1080" alt="evaluation tc 2" src="https://github.com/user-attachments/assets/c674e1bb-6f47-42af-a45e-9f8a5aecf4e2" />
+<img width="1920" height="1080" alt="evaluation tc 2" src="https://github.com/user-attachments/assets/d4c62dca-a477-430c-a5a0-cded1f6ab276" />
 
 #### Test Case 3
-<img width="1920" height="1080" alt="evaluation tc 3" src="https://github.com/user-attachments/assets/59db4f34-cbd5-4cb1-84ee-54b0796d4851" />
+<img width="1920" height="1080" alt="evaluation tc 3" src="https://github.com/user-attachments/assets/2a5c276f-17b1-4dcc-96da-0d9e9e31af2b" />
 
 #### Test Case 4
-<img width="1920" height="1080" alt="evaluation tc 4" src="https://github.com/user-attachments/assets/560bbf46-dbf2-47f0-8730-f24141bae7f8" />
+<img width="1920" height="1080" alt="evaluation tc 4" src="https://github.com/user-attachments/assets/d84eaa03-fd41-4c49-a18c-b3134321644e" />
 
 
 ## Evaluation Output
 
-<img width="1920" height="1080" alt="Evaluation final" src="https://github.com/user-attachments/assets/3f424cf1-59f4-4400-b535-3acfcd72850f" />
+<img width="1920" height="1080" alt="Evaluation final" src="https://github.com/user-attachments/assets/b2fc8695-c193-4a11-babc-42e8cc9af99a" />
 
 _____
 
