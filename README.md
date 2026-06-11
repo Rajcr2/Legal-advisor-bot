@@ -278,4 +278,5 @@ _____
 
 This **Legal Advisor** was mainly about to move from a simple LLM app to **"Mini AI Legal Advocate"** type something more agent-like and production-ready system 
 that combines **retrieval, contextual reasoning, APIs and evaluation** into one system — and can be used both by users and other AI tools.
+Stay tuned for live version.
 
