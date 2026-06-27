@@ -67,6 +67,12 @@ The agent stops naturally when retrieved knowledge stabilizes.
 | **Evaluation**  | DeepEval                        |
 | **Unit Tests**  | Pytest                          |
 
+_________
+## **Note**
+## Legal advisor currently covers :- 
+**Hindu Marriage Act, 1955** and **POSH Act, 2013**
+_________
+
 ### Prerequisites
 To run this project, you need to install the following libraries :
 
