@@ -70,7 +70,7 @@ The agent stops naturally when retrieved knowledge stabilizes.
 _________
 ## **Note**
 ## Legal advisor currently covers :- 
-**Hindu Marriage Act, 1955** and **POSH Act, 2013**
+**Hindu Marriage Act, 1955** and **(POSH) Prevention of Sexual Harassment of Women at Workplace Act, Act, 2013**
 _________
 
 ### Prerequisites
