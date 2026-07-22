@@ -70,7 +70,11 @@ The agent stops naturally when retrieved knowledge stabilizes.
 _________
 ## **Note**
 ## Legal advisor currently covers :- 
-**Hindu Marriage Act, 1955** and **(POSH) Prevention of Sexual Harassment of Women at Workplace Act, 2013**
+1. **Hindu Marriage Act, 1955**
+2. **(POSH) Prevention of Sexual Harassment of Women at Workplace Act, 2013**
+3. **(BNS) Bharatiya Nyaya Sanhita, 2023**
+4. **(BNSS) Bharatiya Nagarik Suraksha Sanhita, 2023**
+5. **(BSA) Bharatiya Sakshya Adhiniyam, 2023** 
 _________
 
 ### Prerequisites
